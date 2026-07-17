@@ -1,0 +1,57 @@
+{
+  "brand": {
+    "name": "TheOzLabs",
+    "developer": "Ozgur Kilinc",
+    "support_email": "hello.theozlabs@gmail.com",
+    "website_repository": "ozgurkilinc/theozlabs-site",
+    "website_base_url": "https://ozgurkilinc.github.io/theozlabs-site/"
+  },
+  "shared_urls": {
+    "company": "https://ozgurkilinc.github.io/theozlabs-site/",
+    "privacy": "https://ozgurkilinc.github.io/theozlabs-site/privacy/",
+    "terms": "https://ozgurkilinc.github.io/theozlabs-site/terms/",
+    "support": "https://ozgurkilinc.github.io/theozlabs-site/support/"
+  },
+  "legacy_review_urls": {
+    "company": "https://ozgurkilinc.github.io/postertile-site/theozlabs/",
+    "privacy": "https://ozgurkilinc.github.io/postertile-site/theozlabs/privacy/",
+    "terms": "https://ozgurkilinc.github.io/postertile-site/theozlabs/terms/",
+    "support": "https://ozgurkilinc.github.io/postertile-site/theozlabs/support/",
+    "status": "broken_after_repository_rename",
+    "repair_plan": "restore_with_compatibility_repository"
+  },
+  "apps": [
+    {
+      "name": "PosterTile",
+      "status": "in_review",
+      "product_url": "https://ozgurkilinc.github.io/theozlabs-site/apps/postertile/",
+      "submitted_url_family": "legacy_review_urls"
+    },
+    {
+      "name": "BookletFlow",
+      "status": "in_review",
+      "product_url": "https://ozgurkilinc.github.io/theozlabs-site/apps/bookletflow/",
+      "submitted_url_family": "legacy_review_urls"
+    },
+    {
+      "name": "SheetNest",
+      "status": "in_review",
+      "product_url": "https://ozgurkilinc.github.io/theozlabs-site/apps/sheetnest/",
+      "submitted_url_family": "legacy_review_urls"
+    },
+    {
+      "name": "SerialFlow",
+      "status": "draft_preview_working",
+      "app_id": "AAHAAMisM-U",
+      "product_url": "https://ozgurkilinc.github.io/theozlabs-site/apps/serialflow/",
+      "package_version": "v3",
+      "build_checks": {
+        "typescript": "passed",
+        "production_build": "passed",
+        "regression_tests": "12/12 passed",
+        "canva_preview": "panel renders"
+      }
+    }
+  ],
+  "updated_at": "2026-07-17"
+}
