@@ -1,0 +1,39 @@
+name: TheOzLabs Link Health
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 12 * * *'
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check current public listing URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          urls=(
+            "https://ozgurkilinc.github.io/theozlabs-site/"
+            "https://ozgurkilinc.github.io/theozlabs-site/apps/serialflow/"
+            "https://ozgurkilinc.github.io/theozlabs-site/apps/postertile/"
+            "https://ozgurkilinc.github.io/theozlabs-site/apps/bookletflow/"
+            "https://ozgurkilinc.github.io/theozlabs-site/apps/sheetnest/"
+            "https://ozgurkilinc.github.io/theozlabs-site/privacy/"
+            "https://ozgurkilinc.github.io/theozlabs-site/terms/"
+            "https://ozgurkilinc.github.io/theozlabs-site/support/"
+          )
+
+          failed=0
+          for url in "${urls[@]}"; do
+            code=$(curl -L --silent --show-error --output /dev/null --write-out '%{http_code}' --max-time 30 "$url" || true)
+            echo "$code $url"
+            if [[ "$code" != "200" ]]; then
+              failed=1
+            fi
+          done
+
+          if [[ "$failed" -ne 0 ]]; then
+            echo "One or more TheOzLabs listing URLs are unavailable."
+            exit 1
+          fi
